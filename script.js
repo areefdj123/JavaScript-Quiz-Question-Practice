@@ -717,23 +717,149 @@
     
 // })("AREEF")
 
-function studentEvaluation(arr){
+// function studentEvaluation(arr){
+//     let result = []
+//     function calculateAverage(student){
+//         let total = 0
+//         for(let i = 0; i < student.marks.length; i++){
+//             total += student.marks[i]
+//         }
+//         let average = total / student.marks.length
+//         return average
+//     }
+//     function checkScholarship(student, average){
+//         let merit = false
+//         let excellence = false
+//         let financialAid = false
+        
+//         if(average >= 95 && student.attendance >= 90 && student.warnings === 0){
+//             excellence = true;
+//         }
+//         if(average >= 85 && student.attendance >= 85 && student.warnings === 0){
+//             merit = true
+//         }
+//         if(student.familyIncome < 40000 && student.attendance >= 80 && average >= 65){
+//             financialAid = true
+//         }
+//         return {
+//             excellence: excellence,
+//             merit: merit,
+//             financialAid: financialAid
+//         };
+//     }
+//     function checkActivities(student){
+//         let count = 0
+//         for(let i = 0; i < student.activities.length; i++){
+//             count++;
+//         }
+//             if(count >= 2 && student.attendance >= 85 && student.warnings === 0){
+//                 return "LeaderShip Award Eligible"
+//             }
+//             else{
+//                 return "LeaderShip Award Not Eligible"
+//             }
+//     }
+//     for(let i = 0; i < arr.length; i++){
+//         let average = calculateAverage(arr[i]);
+//         let scholarship = checkScholarship(arr[i], average);
+//         let activities = checkActivities(arr[i]);
+//         let status = "Not Eligible"
+//         if(scholarship.excellence === true && activities === "Leadership Award Eligible"){
+//             status = "Excellence + Leadership"
+//         }
+//         else if (scholarship.excellence === true){
+//             status = "Excellence Scholarship"
+//         }
+//         else if(scholarship.merit === true && scholarship.financialAid === true){
+//             status = "Merit + Financial Aid"
+//         }
+//         else if(scholarship.merit === true && scholarship.excellence === false && scholarship.financialAid === false){
+//             status = "Merit ScholarShip"
+//         }
+//         else if(scholarship.financialAid === true && scholarship.merit === false && scholarship.excellence === false){
+//             status = "Financial Aid"
+//         }
+//         else if(activities === "Leadership Award Eligible" && scholarship.excellence === false && scholarship.merit === false && scholarship.financialAid === false){
+//             status = "Leadership Award"
+//         }
+//         let studentResults = {
+//             name: arr[i].name,
+//             average: average,
+//             status: status
+//         }
+//         result.push(studentResults)
+//     }
+//     return result
+// }
+// let finalResult = studentEvaluation([
+//     {
+//         name: "Ali",
+//         marks: [85, 90, 88, 92],
+//         attendance: 95,
+//         warnings: 0,
+//         familyIncome: 45000,
+//         activities: ["Sports", "Debate", "Coding"]
+//     },
+//     {
+//         name: "Ahmed",
+//         marks: [75, 80, 78, 82],
+//         attendance: 90,
+//         warnings: 0,
+//         familyIncome: 35000,
+//         activities: ["Sports"]
+//     },
+//     {
+//         name: "Usman",
+//         marks: [95, 98, 96, 97],
+//         attendance: 98,
+//         warnings: 0,
+//         familyIncome: 80000,
+//         activities: ["Debate", "Coding", "Sports"]
+//     },
+//     {
+//         name: "Hassan",
+//         marks: [60, 65, 70, 68],
+//         attendance: 75,
+//         warnings: 2,
+//         familyIncome: 30000,
+//         activities: ["Sports", "Art"]
+//     },
+//     {
+//         name: "Danish",
+//         marks: [90, 92, 94, 96],
+//         attendance: 92,
+//         warnings: 0,
+//         familyIncome: 55000,
+//         activities: ["Coding", "Debate"]
+//     },
+//     {
+//         name: "Bilal",
+//             marks: [70, 75, 80, 85],
+//             attendance: 88,
+//             warnings: 0,
+//             familyIncome: 30000,
+//             activities: ["Sports", "Art"]
+//         }
+//     ])
+// console.log(finalResult);
+
+function studentEvualation(arr){
     let result = []
-    function calculateAverage(student){
+    function calculateAverage(students){
         let total = 0
-        for(let i = 0; i < student.marks.length; i++){
-            total += student.marks[i]
+        for(let i = 0; i < students.marks.length; i++){
+            total += students.marks[i]
         }
-        let average = total / student.marks.length
+        let average = total / students.marks.length
         return average
     }
     function checkScholarship(student, average){
         let merit = false
         let excellence = false
         let financialAid = false
-        
+
         if(average >= 95 && student.attendance >= 90 && student.warnings === 0){
-            excellence = true;
+                excellence = true
         }
         if(average >= 85 && student.attendance >= 85 && student.warnings === 0){
             merit = true
@@ -745,53 +871,55 @@ function studentEvaluation(arr){
             excellence: excellence,
             merit: merit,
             financialAid: financialAid
-        };
+        }
     }
     function checkActivities(student){
         let count = 0
         for(let i = 0; i < student.activities.length; i++){
             count++;
         }
-            if(count >= 2 && student.attendance >= 85 && student.warnings === 0){
-                return "LeaderShip Award Eligible"
-            }
-            else{
-                return "LeaderShip Award Not Eligible"
-            }
+
+        if(count >= 2 && student.attendance >= 85 && student.warnings === 0){
+            return "Leadership Award Eligible"
+        }
+        else{
+            return "Leadership Award Not Eligible"
+        }
     }
     for(let i = 0; i < arr.length; i++){
-        let average = calculateAverage(arr[i]);
-        let scholarship = checkScholarship(arr[i], average);
-        let activities = checkActivities(arr[i]);
+        let average = calculateAverage(arr[i])
+        let scholarship = checkScholarship(arr[i], average)
+        let activities = checkActivities(arr[i])
         let status = "Not Eligible"
+
         if(scholarship.excellence === true && activities === "Leadership Award Eligible"){
             status = "Excellence + Leadership"
         }
-        else if (scholarship.excellence === true){
+        else if(scholarship.excellence === true){
             status = "Excellence Scholarship"
         }
-        else if(scholarship.merit === true && scholarship.financialAid === true){
+        else if (scholarship.merit === true && scholarship.financialAid === true){
             status = "Merit + Financial Aid"
         }
-        else if(scholarship.merit === true && scholarship.excellence === false && scholarship.financialAid === false){
-            status = "Merit ScholarShip"
+        else if(scholarship.merit === true){
+            status = "Merit Scholarship"
         }
-        else if(scholarship.financialAid === true && scholarship.merit === false && scholarship.excellence === false){
+        else if(scholarship.financialAid === true){
             status = "Financial Aid"
         }
         else if(activities === "Leadership Award Eligible" && scholarship.excellence === false && scholarship.merit === false && scholarship.financialAid === false){
             status = "Leadership Award"
         }
-        let studentResults = {
+        result.push({
             name: arr[i].name,
             average: average,
             status: status
-        }
-        result.push(studentResults)
+        })
     }
     return result
 }
-let finalResult = studentEvaluation([
+
+let finalResult = studentEvualation([
     {
         name: "Ali",
         marks: [85, 90, 88, 92],
@@ -834,18 +962,17 @@ let finalResult = studentEvaluation([
     },
     {
         name: "Bilal",
-            marks: [70, 75, 80, 85],
-            attendance: 88,
-            warnings: 0,
-            familyIncome: 30000,
-            activities: ["Sports", "Art"]
-        }
-    ])
+        marks: [70, 75, 80, 85],
+        attendance: 88,
+        warnings: 0,
+        familyIncome: 30000,
+        activities: ["Sports", "Art"]
+    }
+])
 console.log(finalResult);
-// let date = new Date()
-// console.log(date.toLocaleTimeString());
-let test = [1,2,3,4,5,6,7,8,9,10]
-test.splice(2, 3, 20);
-console.log(test);
 
-
+let num = 10
+for (const greet of num) {
+    console.log(greet);
+    
+}
