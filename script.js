@@ -843,136 +843,402 @@
 //     ])
 // console.log(finalResult);
 
-function studentEvualation(arr){
-    let result = []
-    function calculateAverage(students){
-        let total = 0
-        for(let i = 0; i < students.marks.length; i++){
-            total += students.marks[i]
-        }
-        let average = total / students.marks.length
-        return average
-    }
-    function checkScholarship(student, average){
-        let merit = false
-        let excellence = false
-        let financialAid = false
+// function studentEvualation(arr){
+//     let result = []
+//     function calculateAverage(students){
+//         let total = 0
+//         for(let i = 0; i < students.marks.length; i++){
+//             total += students.marks[i]
+//         }
+//         let average = total / students.marks.length
+//         return average
+//     }
+//     function checkScholarship(student, average){
+//         let merit = false
+//         let excellence = false
+//         let financialAid = false
 
-        if(average >= 95 && student.attendance >= 90 && student.warnings === 0){
-                excellence = true
-        }
-        if(average >= 85 && student.attendance >= 85 && student.warnings === 0){
-            merit = true
-        }
-        if(student.familyIncome < 40000 && student.attendance >= 80 && average >= 65){
-            financialAid = true
-        }
-        return {
-            excellence: excellence,
-            merit: merit,
-            financialAid: financialAid
-        }
-    }
-    function checkActivities(student){
-        let count = 0
-        for(let i = 0; i < student.activities.length; i++){
-            count++;
-        }
+//         if(average >= 95 && student.attendance >= 90 && student.warnings === 0){
+//                 excellence = true
+//         }
+//         if(average >= 85 && student.attendance >= 85 && student.warnings === 0){
+//             merit = true
+//         }
+//         if(student.familyIncome < 40000 && student.attendance >= 80 && average >= 65){
+//             financialAid = true
+//         }
+//         return {
+//             excellence: excellence,
+//             merit: merit,
+//             financialAid: financialAid
+//         }
+//     }
+//     function checkActivities(student){
+//         let count = 0
+//         for(let i = 0; i < student.activities.length; i++){
+//             count++;
+//         }
 
-        if(count >= 2 && student.attendance >= 85 && student.warnings === 0){
-            return "Leadership Award Eligible"
-        }
-        else{
-            return "Leadership Award Not Eligible"
-        }
-    }
-    for(let i = 0; i < arr.length; i++){
-        let average = calculateAverage(arr[i])
-        let scholarship = checkScholarship(arr[i], average)
-        let activities = checkActivities(arr[i])
-        let status = "Not Eligible"
+//         if(count >= 2 && student.attendance >= 85 && student.warnings === 0){
+//             return "Leadership Award Eligible"
+//         }
+//         else{
+//             return "Leadership Award Not Eligible"
+//         }
+//     }
+//     for(let i = 0; i < arr.length; i++){
+//         let average = calculateAverage(arr[i])
+//         let scholarship = checkScholarship(arr[i], average)
+//         let activities = checkActivities(arr[i])
+//         let status = "Not Eligible"
 
-        if(scholarship.excellence === true && activities === "Leadership Award Eligible"){
-            status = "Excellence + Leadership"
-        }
-        else if(scholarship.excellence === true){
-            status = "Excellence Scholarship"
-        }
-        else if (scholarship.merit === true && scholarship.financialAid === true){
-            status = "Merit + Financial Aid"
-        }
-        else if(scholarship.merit === true){
-            status = "Merit Scholarship"
-        }
-        else if(scholarship.financialAid === true){
-            status = "Financial Aid"
-        }
-        else if(activities === "Leadership Award Eligible" && scholarship.excellence === false && scholarship.merit === false && scholarship.financialAid === false){
-            status = "Leadership Award"
-        }
-        result.push({
-            name: arr[i].name,
-            average: average,
-            status: status
-        })
-    }
-    return result
-}
+//         if(scholarship.excellence === true && activities === "Leadership Award Eligible"){
+//             status = "Excellence + Leadership"
+//         }
+//         else if(scholarship.excellence === true){
+//             status = "Excellence Scholarship"
+//         }
+//         else if (scholarship.merit === true && scholarship.financialAid === true){
+//             status = "Merit + Financial Aid"
+//         }
+//         else if(scholarship.merit === true){
+//             status = "Merit Scholarship"
+//         }
+//         else if(scholarship.financialAid === true){
+//             status = "Financial Aid"
+//         }
+//         else if(activities === "Leadership Award Eligible" && scholarship.excellence === false && scholarship.merit === false && scholarship.financialAid === false){
+//             status = "Leadership Award"
+//         }
+//         result.push({
+//             name: arr[i].name,
+//             average: average,
+//             status: status
+//         })
+//     }
+//     return result
+// }
 
-let finalResult = studentEvualation([
-    {
-        name: "Ali",
-        marks: [85, 90, 88, 92],
-        attendance: 95,
-        warnings: 0,
-        familyIncome: 45000,
-        activities: ["Sports", "Debate", "Coding"]
-    },
-    {
-        name: "Ahmed",
-        marks: [75, 80, 78, 82],
-        attendance: 90,
-        warnings: 0,
-        familyIncome: 35000,
-        activities: ["Sports"]
-    },
-    {
-        name: "Usman",
-        marks: [95, 98, 96, 97],
-        attendance: 98,
-        warnings: 0,
-        familyIncome: 80000,
-        activities: ["Debate", "Coding", "Sports"]
-    },
-    {
-        name: "Hassan",
-        marks: [60, 65, 70, 68],
-        attendance: 75,
-        warnings: 2,
-        familyIncome: 30000,
-        activities: ["Sports", "Art"]
-    },
-    {
-        name: "Danish",
-        marks: [90, 92, 94, 96],
-        attendance: 92,
-        warnings: 0,
-        familyIncome: 55000,
-        activities: ["Coding", "Debate"]
-    },
-    {
-        name: "Bilal",
-        marks: [70, 75, 80, 85],
-        attendance: 88,
-        warnings: 0,
-        familyIncome: 30000,
-        activities: ["Sports", "Art"]
-    }
-])
-console.log(finalResult);
+// let finalResult = studentEvualation([
+//     {
+//         name: "Ali",
+//         marks: [85, 90, 88, 92],
+//         attendance: 95,
+//         warnings: 0,
+//         familyIncome: 45000,
+//         activities: ["Sports", "Debate", "Coding"]
+//     },
+//     {
+//         name: "Ahmed",
+//         marks: [75, 80, 78, 82],
+//         attendance: 90,
+//         warnings: 0,
+//         familyIncome: 35000,
+//         activities: ["Sports"]
+//     },
+//     {
+//         name: "Usman",
+//         marks: [95, 98, 96, 97],
+//         attendance: 98,
+//         warnings: 0,
+//         familyIncome: 80000,
+//         activities: ["Debate", "Coding", "Sports"]
+//     },
+//     {
+//         name: "Hassan",
+//         marks: [60, 65, 70, 68],
+//         attendance: 75,
+//         warnings: 2,
+//         familyIncome: 30000,
+//         activities: ["Sports", "Art"]
+//     },
+//     {
+//         name: "Danish",
+//         marks: [90, 92, 94, 96],
+//         attendance: 92,
+//         warnings: 0,
+//         familyIncome: 55000,
+//         activities: ["Coding", "Debate"]
+//     },
+//     {
+//         name: "Bilal",
+//         marks: [70, 75, 80, 85],
+//         attendance: 88,
+//         warnings: 0,
+//         familyIncome: 30000,
+//         activities: ["Sports", "Art"]
+//     }
+// ])
+// console.log(finalResult);
 
-let num = 10
-for (const greet of num) {
-    console.log(greet);
+// let num = "Areef"
+// for (const greet of num) {
+//     console.log(greet);
     
+// }
+
+// const myarr = ["Areef", "Danish", "Affan", "Sohail"]
+// myarr.forEach(function (val){
+//     console.log(val);
+    
+// })  
+
+// function studentEvaluation(arr){
+//     let result = []
+//     function calculateAverage(student){
+//         let total = 0
+//         for(let i = 0; i < student.marks.length; i++){
+//             total += student.marks[i]
+//         }
+//         let average = total / student.marks.length
+
+//         return average
+//     }
+//     function checkScholarship(student, average){
+//         let merit = false
+//         let excellence = false
+//         let financialAid = false
+
+//         if(average >= 95 && student.attendance >= 90 && student.warnings === 0){
+//             excellence = true
+//         }
+//         if(average >= 85 && student.attendance >= 85 && student.warnings === 0){
+//             merit = true
+//         }
+//         if(student.financialIncome < 40000 && student.attendance >= 85 && average >= 65){
+//             financialAid = true
+//         }
+        
+//         return {
+//             excellence: excellence,
+//             merit: merit,
+//             financialAid: financialAid
+//         }
+//     }
+//     function checkActivities(student){
+//         let count = 0
+//         for(let i = 0; i < student.activities.length; i++){
+//             count++;
+//         }
+//         if(count >= 2 && student.attendance >= 85 && student.warnings === 0){
+//             return "Leadership Award Eligible"
+//         }
+//         else{
+//             return "Leadership Award Not Eligible"
+//         }
+//     }
+//     for(let i = 0; i < arr.length; i++){
+//         let average = calculateAverage(arr[i])
+//         let scholarship = checkScholarship(arr[i], average)
+//         let activities = checkActivities(arr[i])
+//         let status = "Not Eligible"
+
+//         if(scholarship.excellence === true && average === "Leadership Award Eligible"){
+//             status = "Excellence + Leadership"
+//         }
+//         else if(scholarship.excellence === true){
+//             status = "Excellence Scholarship"
+//         }
+//         else if(scholarship.merit === true && scholarship.financialAid === true){
+//             status = "Merit + Financial Aid"
+//         }
+//         else if(scholarship.merit === true){
+//             status = "Merit Scholarship"
+//         }
+//         else if(scholarship.financialAid === true){
+//             status = "Financial Aid"
+//         }
+//         else if(activities === "Leadership Award Eligible" && scholarship.excellence === false && scholarship.merit === false && scholarship.financialAid === false){
+//             status = "Leadership Award"
+//         }
+//         result.push({
+//             name: arr[i].name,
+//             average: average,
+//             status: status
+//         })
+//     }
+//     return result
+// }
+
+// let finalREsult = studentEvaluation([
+//     {
+//         name: "Ali",
+//         marks: [85, 90, 88, 92],
+//         attendance: 95,
+//         warnings: 0,
+//         familyIncome: 45000,
+//         activities: ["Sports", "Debate", "Coding"]
+//     },
+//     {
+//         name: "Ahmed",
+//         marks: [75, 80, 78, 82],
+//         attendance: 90,
+//         warnings: 0,
+//         familyIncome: 35000,
+//         activities: ["Sports"]
+//     },
+//     {
+//         name: "Usman",
+//         marks: [95, 98, 96, 97],
+//         attendance: 98,
+//         warnings: 0,
+//         familyIncome: 80000,
+//         activities: ["Debate", "Coding", "Sports"]
+//     },
+//     {
+//         name: "Hassan",
+//         marks: [60, 65, 70, 68],
+//         attendance: 75,
+//         warnings: 2,
+//         familyIncome: 30000,
+//         activities: ["Sports", "Art"]
+//     },
+//     {
+//         name: "Danish",
+//         marks: [90, 92, 94, 96],
+//         attendance: 92,
+//         warnings: 0,
+//         familyIncome: 55000,
+//         activities: ["Coding", "Debate"]
+//     },
+//     {
+//         name: "Bilal",
+//         marks: [70, 75, 80, 85],
+//         attendance: 88,
+//         warnings: 0,
+//         familyIncome: 30000,
+//         activities: ["Sports", "Art"]
+//     }
+// ])
+// console.log(finalREsult);
+function sleepFor(sleepDuration) {
+    var now = new Date().getTime();
+    while (new Date().getTime() < now + sleepDuration) { /* do nothing */ }
 }
+
+function startMatch(){
+    let team1 = prompt("Enter the first team name:")
+    let team2 = prompt("Enter the second team name:")
+    let overs = prompt("Enter the numbers of overs for the match:")
+    console.log("The " + overs + " overs match is between " + team1 + " and " + team2);
+    sleepFor(2000)
+    console.log("Toss is taking place..");
+    sleepFor(3000)
+    let tossWinner;
+    if(Math.random() < 0.5){
+        tossWinner = team1
+    }
+    else{
+        tossWinner = team2
+    }
+    console.log(tossWinner + " won the toss and decided to bat first.");
+    sleepFor(1000)
+
+    console.log(overs + " Overs match started " + tossWinner + " is to bat.");
+    sleepFor(2000)
+
+    let totalScore1  = 0
+    let totalWickets1 = 0
+
+    for(let i = 1; i <= overs; i++){
+        console.log("Overs # " + i + " Started");
+        sleepFor(2000)
+        for(let j = 1; j <= 6; j++){
+            let run  = Math.floor(Math.random() * 7);
+            if (run === 0){
+                totalWickets1++
+                console.log("BAll " + j + ": It's out!");
+                sleepFor(2000)
+            }
+            else if(run === 4){
+                totalScore1 += 4
+                console.log("Ball " + j + ": Beautiful Short! That's a Four(4)!");
+                sleepFor(1000)
+            }
+            else if(run === 6){
+                totalScore1 += 6
+                console.log("Ball " + j + ": Massive hit! That's a huge Six(6)!");
+                sleepFor(1000)
+            }
+            else {
+                totalScore1 += run;
+                console.log("Ball " + j + ": Scored " + run + " runs.");
+                sleepFor(1000);
+            }
+            if(totalWickets1 >= 10){
+                console.log("All Out!");
+                break;
+            }
+        }
+        console.log("End of over " + i + " | Score: " + totalScore1 + " / " + totalWickets1);
+        if(totalWickets1 >= 10) break; 
+        
+    }
+    let target = totalScore1 + 1
+    console.log("First Inning Ended! " + tossWinner + " Scored " + totalScore1 + " / " + totalWickets1);
+     console.log("Target for " + team2 + " is " + target + " runs.");
+     sleepFor(3000)
+     console.log("Second Inning Started! " + team2 + " is to bat to chase " + target + " runs.");
+     sleepFor(2000);
+
+     let totalScore2 = 0
+     let totalWicket2 = 0 
+     let matchWon = false
+
+     for(let i = 1; i <= overs; i++){
+        console.log("Overs # " + i + " started");
+        sleepFor(2000)
+        for(let j = 1; j <= 6; j++){
+            let run = Math.floor(Math.random() * 7)
+            
+            if(run === 0){
+                totalWicket2++
+                console.log("Ball " + j + ": It's Out!");
+                sleepFor(2000)
+            }
+            else if(run === 4) {
+                totalScore2 += 4
+                console.log("Ball " + j + ": Beautiful Short! That's a Four (4)");
+                sleepFor(1000)
+            }
+            else if(run === 6){
+                totalScore2 += 6
+                console.log("Ball " + j + "Massive Hit That's a huge Six(6)!");
+                sleepFor(1000)
+            }
+            else{
+                totalScore2 += run 
+                console.log("Ball " + j + ": Scored " + run + " runs.");
+                sleepFor(1000)
+            }
+            if(totalScore2 >= target){
+                matchWon = true 
+                break;
+            }
+            if(totalWicket2 >= 10){
+                console.log("All out!");
+                break;
+            }
+        }
+        console.log("End of Over " + i + " | Scored: " + totalScore2 + " / " + totalWicket2 + " (Target: " + target + ")");
+        if(matchWon || totalWicket2 >= 10){
+            break
+        }
+     }
+     console.log("MATCH FINISHED!");
+     console.log(tossWinner + " Score " + totalScore1 + " / " + totalWickets1);
+     console.log(team2 + " Score " + totalScore2 + " / " + totalWicket2);
+     if(totalScore2 >= target){
+        console.log(team2 + " Won the match by successfully chasing the target!");
+     }
+     else if(totalScore1 === totalScore2){
+        console.log("The match is Tie");
+     }
+     else{
+        console.log(tossWinner + " Won the match by defending the total!");
+        
+     }
+     
+     
+}
+startMatch()
