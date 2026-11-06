@@ -1116,129 +1116,121 @@ function sleepFor(sleepDuration) {
     while (new Date().getTime() < now + sleepDuration) { /* do nothing */ }
 }
 
-function startMatch(){
-    let team1 = prompt("Enter the first team name:")
-    let team2 = prompt("Enter the second team name:")
-    let overs = prompt("Enter the numbers of overs for the match:")
-    console.log("The " + overs + " overs match is between " + team1 + " and " + team2);
+
+let team1 = prompt("Enter the First Team name.")
+let team2 = prompt("Enter the Second Team name.")
+let overs = prompt("Enter the numbers of over for the Match!")
+console.log(`The ${overs} Overs math between the two teams ${team1} and ${team2}`);
+sleepFor(1000)
+
+console.log("Toss between two teams");
+sleepFor(3000)
+
+let tossWinner;
+if(Math.random() <0.8){
+    tossWinner = team1
+}
+else{
+    tossWinner = team2
+}
+console.log(`${tossWinner} Won the and will go to the bat`);
+sleepFor(1000)
+console.log(`The ${overs} Overs Match Started, ${tossWinner} is to Bat`);
+sleepFor(2000)
+
+let team1Score = 0
+let team1Wickets = 0
+for(let i = 1; i <= overs; i++){
+    console.log(`Over # ${i} Started`);
     sleepFor(2000)
-    console.log("Toss is taking place..");
-    sleepFor(3000)
-    let tossWinner;
-    if(Math.random() < 0.5){
-        tossWinner = team1
+    for(let j = 1; j <= 6; j++){
+        let run = Math.floor(Math.random() * 7)
+        if(run === 0){
+            team1Wickets++;
+            console.log(`Ball ${j} : It's Out!`);
+            sleepFor(2000)
+        }
+        else if(run === 4){
+            team1Score += 4
+            console.log(`Ball ${j} : Beautiful Short! That's a Four (4)`);
+            sleepFor(1000)
+        }
+        else if(run === 6){
+            team1Score += 6;
+            console.log(`Ball ${j} : Massive Hit, That's a Huge Six (6)`);
+            sleepFor(1000)
+        }
+        else {
+            team1Score += run;
+            console.log(`Ball ${j} is ${run} runs.`);
+            sleepFor(1000)
+        }
+        if(team1Wickets >= 10){
+            console.log("It's all Out!");
+            break;
+        }
     }
-    else{
-        tossWinner = team2
-    }
-    console.log(tossWinner + " won the toss and decided to bat first.");
-    sleepFor(1000)
+    console.log(`End of over ${i} | Scored is ${team1Score} / ${team1Wickets}`);
+    if(team1Wickets >= 10) break
+}
 
-    console.log(overs + " Overs match started " + tossWinner + " is to bat.");
+let target = team1Score + 1
+console.log(`First Inning Ended! ${tossWinner} Scored ${team1Score} / ${team1Wickets}`);
+console.log(`Target for the ${team2} is chase the ${team1Score}`);
+sleepFor(3000)
+console.log(`Second Inning Started! ${team2} is the bat to chase (Target: ${target})`);
+sleepFor(2000)
+let team2Score = 0
+let team2Wickets = 0
+let matchWon = false
+
+for(let i = 1; i <= overs; i++){
+    console.log(`Overs # ${i} Started`);
     sleepFor(2000)
-
-    let totalScore1  = 0
-    let totalWickets1 = 0
-
-    for(let i = 1; i <= overs; i++){
-        console.log("Overs # " + i + " Started");
-        sleepFor(2000)
-        for(let j = 1; j <= 6; j++){
-            let run  = Math.floor(Math.random() * 7);
-            if (run === 0){
-                totalWickets1++
-                console.log("BAll " + j + ": It's out!");
-                sleepFor(2000)
-            }
-            else if(run === 4){
-                totalScore1 += 4
-                console.log("Ball " + j + ": Beautiful Short! That's a Four(4)!");
-                sleepFor(1000)
-            }
-            else if(run === 6){
-                totalScore1 += 6
-                console.log("Ball " + j + ": Massive hit! That's a huge Six(6)!");
-                sleepFor(1000)
-            }
-            else {
-                totalScore1 += run;
-                console.log("Ball " + j + ": Scored " + run + " runs.");
-                sleepFor(1000);
-            }
-            if(totalWickets1 >= 10){
-                console.log("All Out!");
-                break;
-            }
+    for(let j = 1; j <= 6; j++){
+        let run = Math.floor(Math.random() * 7)
+        if(run === 0){
+            team2Wickets++;
+            console.log(`Ball ${j} : It's all Out!`);
+            sleepFor(2000)
         }
-        console.log("End of over " + i + " | Score: " + totalScore1 + " / " + totalWickets1);
-        if(totalWickets1 >= 10) break; 
-        
-    }
-    let target = totalScore1 + 1
-    console.log("First Inning Ended! " + tossWinner + " Scored " + totalScore1 + " / " + totalWickets1);
-     console.log("Target for " + team2 + " is " + target + " runs.");
-     sleepFor(3000)
-     console.log("Second Inning Started! " + team2 + " is to bat to chase " + target + " runs.");
-     sleepFor(2000);
-
-     let totalScore2 = 0
-     let totalWicket2 = 0 
-     let matchWon = false
-
-     for(let i = 1; i <= overs; i++){
-        console.log("Overs # " + i + " started");
-        sleepFor(2000)
-        for(let j = 1; j <= 6; j++){
-            let run = Math.floor(Math.random() * 7)
-            
-            if(run === 0){
-                totalWicket2++
-                console.log("Ball " + j + ": It's Out!");
-                sleepFor(2000)
-            }
-            else if(run === 4) {
-                totalScore2 += 4
-                console.log("Ball " + j + ": Beautiful Short! That's a Four (4)");
-                sleepFor(1000)
-            }
-            else if(run === 6){
-                totalScore2 += 6
-                console.log("Ball " + j + "Massive Hit That's a huge Six(6)!");
-                sleepFor(1000)
-            }
-            else{
-                totalScore2 += run 
-                console.log("Ball " + j + ": Scored " + run + " runs.");
-                sleepFor(1000)
-            }
-            if(totalScore2 >= target){
-                matchWon = true 
-                break;
-            }
-            if(totalWicket2 >= 10){
-                console.log("All out!");
-                break;
-            }
+        else if(run === 4){
+            team2Score += 4;
+            console.log(`Ball ${j} : Beautiful Short! That's a Four (4).`);
+            sleepFor(1000)
         }
-        console.log("End of Over " + i + " | Scored: " + totalScore2 + " / " + totalWicket2 + " (Target: " + target + ")");
-        if(matchWon || totalWicket2 >= 10){
+        else if(run === 6){
+            team2Score += 6;
+            console.log(`Ball ${j} : Massive Hit, That's a Huge (6).`);
+            sleepFor(1000)
+        }
+        else{
+            team2Score += run;
+            console.log(`Ball ${j} is ${run} runs.`);
+            sleepFor(1000)
+        }
+        if(team2Wickets >= 10){
+            console.log("It's all Out!");
             break
         }
-     }
-     console.log("MATCH FINISHED!");
-     console.log(tossWinner + " Score " + totalScore1 + " / " + totalWickets1);
-     console.log(team2 + " Score " + totalScore2 + " / " + totalWicket2);
-     if(totalScore2 >= target){
-        console.log(team2 + " Won the match by successfully chasing the target!");
-     }
-     else if(totalScore1 === totalScore2){
-        console.log("The match is Tie");
-     }
-     else{
-        console.log(tossWinner + " Won the match by defending the total!");
-        
-     }
-     
-     
+    }
+    console.log(`End of over ${i} | Scored is ${team2Score} / ${team2Wickets} (Target: ${target})`);
+    if(matchWon || team2Wickets >= 10){
+        break
+    }
 }
-startMatch()
+console.log("Match Finished!");
+console.log(`${tossWinner} Scored ${team1Score} / ${team1Wickets}`);
+console.log(`${team2} Scored ${team2Score} / ${team2Wickets}`);
+if(team2Score >= target){
+    console.log(`${team2} Won The Match by successfully chasing the Target`);
+    
+}
+else if(team1Score === team2Score){
+    console.log("Math is Tie");
+    
+}
+else{
+    console.log(`${tossWinner} Won the match by defending The Total`);
+    
+}
