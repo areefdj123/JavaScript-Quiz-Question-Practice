@@ -1,0 +1,35 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+
+#emailinput{
+    border: 1px solid rgb(168, 159, 159);
+}   
+#emailinput:hover{
+    border: 1px solid rgb(252, 255, 254);
+}
+#passinput{
+    border: 1px solid rgb(168, 159, 159);
+}
+#passinput:hover{
+    border: 1px solid rgb(255, 255, 255);
+}
+#mainheading{
+    align-self: flex-start;
+}
+#loginbtn{
+    border: none;
+    border-radius: 20px;
+}
+#forgotbtn{
+    border: none;
+    background: transparent;
+    border-radius: 20px;
+}
+#forgotbtn:hover{
+    background-color: #363637;
+    transition: 0.2s ease-in-out;
+}

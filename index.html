@@ -4,13 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <style>
     body{
-        background-color: black;
+        background: linear-gradient(90deg,rgba(0, 34, 97, 0.92) 0%, rgba(222, 18, 18, 0.75) 98%);
     }
+
 </style>
 <body>
-    <script src="script.js"></script>
+    <div class="container">
+        <div class="login_page">
+            <h1 id="mainheading">Login into Instagram</h1>
+            <input type="email" id="emailinput" placeholder="Email address">
+            <input type="password" placeholder="Password" id="passinput">
+            <button id="loginbtn">Log in</button>
+            <button id="forgotbtn">Forgot password?</button>
+        </div>
+    </div>
 </body>
+<script src="script.js"></script>
 </html>
