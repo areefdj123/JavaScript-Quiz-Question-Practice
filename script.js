@@ -1235,65 +1235,138 @@
     
 // }
 
-const container = document.getElementsByClassName("container")
-const loginpage = document.getElementsByClassName("login_page")
-const mainheading = document.getElementById("mainheading")
-const emailinput = document.getElementById("emailinput")
-const passinput = document.getElementById("passinput")
-const loginbtn = document.getElementById("loginbtn")
-const forgotbtn = document.getElementById("forgotbtn")
+// const container = document.getElementsByClassName("container")[0]
+// const loginpage = document.getElementsByClassName("login_page")
+// const mainheading = document.getElementById("mainheading")
+// const emailinput = document.getElementById("emailinput")
+// const passinput = document.getElementById("passinput")
+// const loginbtn = document.getElementById("loginbtn")
+// const forgotbtn = document.getElementById("forgotbtn")
 
-container[0].style.display = 'flex'
-container[0].style.justifyContent = "center"
-container[0].style.alignItems = "center"
-container[0].style.height = "100vh"
+// container.style.display = 'flex'
+// container.style.justifyContent = "center"
+// container.style.alignItems = "center"
+// container.style.height = "100vh"
 
-loginpage[0].style.display = "flex"
-loginpage[0].style.flexDirection = "column"
-loginpage[0].style.justifyContent = "center"
-loginpage[0].style.alignItems = "center"
-loginpage[0].style.backgroundColor = "#1F1F20"
-loginpage[0].style.height = "450px"
-loginpage[0].style.width = "600px"
-loginpage[0].style.borderRadius = "10px"
+// const login_page = document.createElement('div')
 
-mainheading.style.fontFamily = "sans-serif"
-mainheading.style.marginBottom = "2rem"
-mainheading.style.fontSize = "22px"
-mainheading.style.paddingLeft = "2.5rem"
-mainheading.style.color = "white"
+// login_page.style.display = "flex"
+// login_page.style.flexDirection = "column"
+// login_page.style.justifyContent = "flexStart"
+// // login_page.style.alignItems = "center"
+// login_page.style.padding = "3rem 2.5rem"
+// login_page.style.backgroundColor = "#1F1F20"
+// login_page.style.height = "450px"
+// login_page.style.width = "600px"
+// login_page.style.borderRadius = "10px"
+// login_page.style.paddingTop = "5rem"
 
-emailinput.style.height = "3rem"
-emailinput.style.width = "33rem"
-emailinput.style.padding = "1rem"
-emailinput.style.marginBottom = ".5rem"
-emailinput.style.borderRadius = "15px"
-emailinput.style.background = "transparent"
-emailinput.style.color = "#fcf7f7"
-emailinput.style.fontWeight = "600"
-emailinput.style.fontSize = "16px"
+// container.appendChild(login_page)
 
-passinput.style.height = "3rem"
-passinput.style.width = "33rem"
-passinput.style.padding = "1rem"
-passinput.style.borderRadius = "15px"
-passinput.style.background = "transparent"
-passinput.style.fontWeight = "600"
-passinput.style.fontSize = "16px"
+// const mainheading = document.createElement('h1')
+// mainheading.innerHTML = "Log into Instagram"
+// mainheading.style.fontFamily = "sans-serif"
+// mainheading.style.marginBottom = "2rem"
+// mainheading.style.fontSize = "22px"
+// // mainheading.style.paddingLeft = "2.5rem"
+// mainheading.style.color = "white"
 
-loginbtn.style.height = "2.5rem"
-loginbtn.style.width = "33rem"
-loginbtn.style.marginTop = "2rem"
-loginbtn.style.backgroundColor = "#0664d6"
-loginbtn.style.fontFamily = "sans-serif"
-loginbtn.style.color = "white"
-loginbtn.style.fontSize = "16px"
-loginbtn.style.cursor = "pointer"
+// login_page.appendChild(mainheading)
 
-forgotbtn.style.height = "2.5rem"
-forgotbtn.style.width = "33rem"
-forgotbtn.style.marginTop = ".7rem"
-forgotbtn.style.fontFamily ="sans-serif"
-forgotbtn.style.color = "white"
-forgotbtn.style.fontSize = "16px"
-forgotbtn.style.cursor = "pointer"
+// const emailinput = document.createElement('input')
+
+// emailinput.type = "email"
+// emailinput.placeholder = "Email address"
+// emailinput.style.height = "3rem"
+// emailinput.style.width = "33rem"
+// emailinput.style.padding = "1rem"
+// emailinput.style.marginBottom = ".5rem"
+// emailinput.style.border = "1px solid gray"
+// emailinput.style.borderRadius = "15px"
+// emailinput.style.background = "transparent"
+// emailinput.style.color = "#fcf7f7"
+// emailinput.style.fontWeight = "600"
+// emailinput.style.fontSize = "16px"
+
+// login_page.appendChild(emailinput)
+
+// const passinput = document.createElement('input')
+
+// passinput.type = "password"
+// passinput.placeholder = "Password"
+// passinput.style.height = "3rem"
+// passinput.style.width = "33rem"
+// passinput.style.padding = "1rem"
+// passinput.style.borderRadius = "15px"
+// passinput.style.border = "1px solid gray"
+// passinput.style.background = "transparent"
+// passinput.style.fontWeight = "600"
+// passinput.style.fontSize = "16px"
+
+// login_page.appendChild(passinput)
+
+// const loginbtn = document.createElement('button')
+
+// loginbtn.innerHTML = "Log in"
+// loginbtn.style.height = "2.5rem"
+// loginbtn.style.width = "33rem"
+// loginbtn.style.marginTop = "2rem"
+// loginbtn.style.backgroundColor = "#0664d6"
+// loginbtn.style.fontFamily = "sans-serif"
+// loginbtn.style.border = "none"
+// loginbtn.style.borderRadius = "20px"
+// loginbtn.style.color = "white"
+// loginbtn.style.fontSize = "16px"
+// loginbtn.style.cursor = "pointer"
+
+// login_page.appendChild(loginbtn)
+
+// const forgotbtn = document.createElement('button')
+// forgotbtn.innerHTML = "Forgot password"
+// forgotbtn.style.height = "2.5rem"
+// forgotbtn.style.width = "33rem"
+// forgotbtn.style.marginTop = ".7rem"
+// forgotbtn.style.fontFamily ="sans-serif"
+// forgotbtn.style.color = "white"
+// forgotbtn.style.fontSize = "16px"
+// forgotbtn.style.backgroundColor = "#363637"
+// forgotbtn.style.borderRadius = "20px"
+// forgotbtn.style.border = "none"
+// forgotbtn.style.cursor = "pointer" 
+
+// login_page.appendChild(forgotbtn)
+
+
+// document.getElementById('picthree').onclick = function(){
+//     alert("This pic is three")
+// }
+
+// document.getElementById('pictwo').addEventListener('click', function(){
+//     alert("this pic is two")
+// })
+
+// document.getElementById('images').addEventListener('click', function(e){
+//     console.log("click inside the ul");
+// })
+
+// document.getElementById('pictwo').addEventListener('click', function(e){
+//     console.log("Click the pic two");
+// })
+
+// document.getElementById('google').addEventListener('click', function(e){
+//     console.log("You click the google");
+//     e.preventDefault()
+//     e.stopPropagation()
+// })
+
+document.querySelector('#images').addEventListener('click', function (e){
+    console.log(e.target.tagName);
+    if(e.target.tagName === 'IMG'){
+        console.log(e.target.id);
+        
+        let removeIt = e.target.parentNode
+        removeIt.remove()
+    }
+    // removeIt.parentNode.removeChild(removeIt)
+    
+})
