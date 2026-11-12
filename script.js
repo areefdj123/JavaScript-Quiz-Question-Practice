@@ -1373,3 +1373,115 @@
 
 // let num = BigInt(12345678)
 // console.log(num);
+// console.log(2, ++ 2);
+
+// document.querySelector('#btn').addEventListener('click', () => {
+//     let box = document.querySelector('.box')
+//     box.hidden = true
+// })
+
+// let button = document.getElementById('btn')
+//  document.addEventListener('keydown', (e) => {
+//     console.log(e.key, e.keyCode);
+    
+// })
+
+// document.querySelector(".container").addEventListener('click', (e) => {
+//     e.stopPropagation()
+//     alert("you click the container")
+// })
+// document.querySelector(".childcontainer").addEventListener('click', (e) =>{
+//     e.stopPropagation()
+//     alert("you click the childcontainer")
+// })
+// document.querySelector(".child").addEventListener('click', (e)=>{
+//     e.stopPropagation()
+//     alert("you click the child")
+// })
+// console.log("My Name is Areef");
+
+// setTimeout(()=>{
+//     console.log("My GrandFather name is Jalil");
+// })
+// console.log("My Father name is Danish");
+
+// let orderpizza = new Promise((resolve, reject)=>{
+//     let ovenworking = true;
+//     console.log("Pizza ban rha he. (waiting....)");
+//     setTimeout(()=>{
+//         if(ovenworking){
+//             resolve("apka pizza tayyar he")
+//         }
+//         else{
+//             reject("sorry apka pizza bake nhi hua oven kharab hogya he")
+//         }
+//     }, 2000)
+// })
+// orderpizza.then((message)=>{
+//     console.log("Success:", message);
+// })
+// .catch((error)=>{
+//     console.log("Error:", error);
+// })
+// .finally(()=>{
+//     console.log("order khatam hua");
+// })
+
+
+// document.querySelector("ul").addEventListener("click", function(e){
+//     e.target.classList.toggle("lt")
+// })
+
+// let user =  new Promise((resolve, reject)=>{
+//     let areef = Number(prompt("what's your age"))
+//     // console.log("What's Your age");
+    
+//     setTimeout(()=>{
+//         if(areef === 18){
+//             resolve("you are the legal");
+            
+//         }
+//         else{
+//             reject("you are the illegal");
+            
+//         }
+//     }, 2000)
+// })
+
+// user.then((mess)=>{
+//     console.log("Successfully:", mess);
+    
+// })
+// .catch((err)=>{
+//     console.log("Error:", err);
+    
+// })
+// .finally(()=>{
+//     console.log("Process khatam hua");
+    
+// })
+
+// async function getData(){
+//     return new Promise((resolve, reject) =>{
+//         setTimeout(()=>{
+//             resolve("5 Seconds completed")
+//         }, 5000)
+//     })
+// }
+async function getData(){
+    let i = await fetch('https://jsonplaceholder.typicode.com/posts/1')
+    let data2 = await i.json()
+    console.log(data2);
+    return
+}
+
+
+async function user(){
+    console.log("areef");
+    console.log("areef");
+    console.log("areef");
+    let data = await getData()
+    console.log(data);
+}
+
+user()
