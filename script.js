@@ -1359,14 +1359,17 @@
 //     e.stopPropagation()
 // })
 
-document.querySelector('#images').addEventListener('click', function (e){
-    console.log(e.target.tagName);
-    if(e.target.tagName === 'IMG'){
-        console.log(e.target.id);
+// document.querySelector('#images').addEventListener('click', function (e){
+//     console.log(e.target.tagName);
+//     if(e.target.tagName === 'IMG'){
+//         console.log(e.target.id);
         
-        let removeIt = e.target.parentNode
-        removeIt.remove()
-    }
-    // removeIt.parentNode.removeChild(removeIt)
+//         let removeIt = e.target.parentNode
+//         removeIt.remove()
+//     }
+//     // removeIt.parentNode.removeChild(removeIt)
     
-})
+// })
+
+// let num = BigInt(12345678)
+// console.log(num);
