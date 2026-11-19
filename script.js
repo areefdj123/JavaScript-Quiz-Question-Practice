@@ -1468,20 +1468,158 @@
 //         }, 5000)
 //     })
 // }
-async function getData(){
-    let i = await fetch('https://jsonplaceholder.typicode.com/posts/1')
-    let data2 = await i.json()
-    console.log(data2);
-    return
+// async function getData(){
+//     let i = await fetch('https://jsonplaceholder.typicode.com/posts/1')
+//     let data2 = await i.json()
+//     console.log(data2);
+//     return
+// }
+
+
+// async function user(){
+//     console.log("areef");
+//     console.log("areef");
+//     console.log("areef");
+//     let data = await getData()
+//     console.log(data);
+// }
+
+// user()
+
+
+// async function getData(){
+//   let i = await fetch('https://jsonplaceholder.typicode.com/posts/1')
+//   let data2 = await i.json()
+//   console.log(data2);
+//   return(455)
+// }
+
+// async function main(){
+//     console.log("my name is areef");
+//     console.log("my Fathername is Danish");
+//     let data = await getData()
+//     console.log(data);
+    
+// }
+// main()
+
+// async function getData(){
+//     let response = await fetch("https://jsonplaceholder.typicode.com/users/5",{
+//         method: "PUT",
+//         body: JSON.stringify({
+//             Userid: 100,
+//             name: "Danish",
+//             email: "danish@gmail.com",
+//         }),
+//         headers: {
+//             "Content-type" : "application/json; charset=UTF-8"
+//         },
+//     })
+
+//     let data = await response.json()
+//     return data
+    
+// }
+// async function main(){
+//     let data = await getData()
+//     console.log(data);
+    
+// }
+// main()
+
+// class Car {
+//   constructor(brand, color) {
+//     this.brand = brand; 
+//     this.color = color; 
+//   }
+
+//   start() {
+//     console.log(this.brand + " start ho gayi hai.");
+//   }
+// }
+
+// const car1 = new Car("Supra", "White");
+// const car2 = new Car("BMW", "Black");
+// console.log(car1);
+// car1.start()
+
+// class Animal{
+//     eat(){
+//         console.log("khana kha rha he");
+        
+//     }
+// }
+
+// class Dog extends Animal{
+//     bark(){
+//         console.log("bhonk rha he");
+        
+//     }
+// }
+
+// const myDog = new Dog()
+// // console.log(myDog.eat);
+// myDog.eat()
+
+// class Mobile {
+//    constructor(brand, price){
+
+//     this.brand = brand
+//     this.price = price
+
+//    } 
+//    details(){
+//     console.log(`ye mera ${this.brand} hai or ye mene ${this.price} ka liya he`);
+    
+//    }
+// }
+
+// const m1 = new Mobile("Samsung", 100000)
+// const m2 = new Mobile("iPhone", 250000)
+
+// m1.details()
+// m2.details()
+
+// class Payment{
+//     pay(){
+//         console.log("Payment horhi he...");
+//     }   
+// }
+// class JazzCash extends Payment{
+//     pay(){
+//         console.log("JazzCash se payment horhi he...");
+//     }
+// }
+// class CreditCard extends JazzCash{
+//     pay(){
+//         console.log("Credit Card se payment horhi he...");
+//     }
+// }
+// const pay = new Payment()
+// const p1 = new JazzCash()
+// const p2 = new CreditCard()
+// pay.pay()
+// p1.pay()
+// p2.pay()
+
+class Engine {
+    start(){
+        console.log("Engine start hogya!");
+    }
+}
+class Car {
+    constructor(){
+        this.engine = new Engine()
+    }
+drive(){
+    this.engine.start()
+    console.log("car chal rhi he...");   
+}
 }
 
 
-async function user(){
-    console.log("areef");
-    console.log("areef");
-    console.log("areef");
-    let data = await getData()
-    console.log(data);
-}
+const myCar = new Car()
+console.log(myCar instanceof Car);
+console.log(myCar instanceof Engine);
 
-user()
+myCar.drive()
