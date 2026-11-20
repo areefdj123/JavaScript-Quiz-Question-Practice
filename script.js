@@ -1602,24 +1602,32 @@
 // p1.pay()
 // p2.pay()
 
-class Engine {
-    start(){
-        console.log("Engine start hogya!");
-    }
-}
-class Car {
-    constructor(){
-        this.engine = new Engine()
-    }
-drive(){
-    this.engine.start()
-    console.log("car chal rhi he...");   
-}
-}
+// class Engine {
+//     start(){
+//         console.log("Engine start hogya!");
+//     }
+// }
+// class Car {
+//     constructor(){
+//         this.engine = new Engine()
+//     }
+// drive(){
+//     this.engine.start()
+//     console.log("car chal rhi he...");   
+// }
+// }
+
+// class PetrolEngine extends Car{
+//     start(){
+//         console.log("car mien petrol kam he");
+        
+//     }
+// }
 
 
-const myCar = new Car()
-console.log(myCar instanceof Car);
-console.log(myCar instanceof Engine);
+// const myCar = new Car()
+// console.log(myCar instanceof Car);
+// console.log(myCar instanceof Engine);
 
-myCar.drive()
+// myCar.drive()
+// myCar.start()
