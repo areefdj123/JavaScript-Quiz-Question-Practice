@@ -1868,29 +1868,158 @@
 //   }
 // }
 
-class user {
-  constructor(email, password){
-    this.email = email
-    this.password = password
-  }
-  get email(){
-    return this.Email.toUpperCase()
-  }
-  set email(value){
-    this.Email = value
-  }
-  get password(){
-    return this.Password.toUpperCase()
-  }
-  set password (value){
-    this.Password = value
-  }
+// class user {
+//   constructor(email, password){
+//     this.email = email
+//     this.password = password
+//   }
+//   get email(){
+//     return this.Email.toUpperCase()
+//   }
+//   set email(value){
+//     this.Email = value
+//   }
+//   get password(){
+//     return this.Password.toUpperCase()
+//   }
+//   set password (value){
+//     this.Password = value
+//   }
 
-}
+// }
 
-const userdata = new user("areef@gmail.com", "areef")
+// const userdata = new user("areef@gmail.com", "areef")
 
-console.log(userdata.email);
+// console.log(userdata.email);
+
+
+
+
+// function student (arr){
+//   let grade = []
+//   for(let i = 0; i < arr.length; i++){
+//     if(arr[i].marks >= 80){
+//       grade++
+//       console.log(arr[i].name ,"Grade A");
       
+//     }
+//     else if(arr[i].marks >= 60){
+//       grade++
+//       console.log(arr[i].name,"Grade B");
+      
+//     }
+//     else if (arr[i].marks >= 40){
+//       grade++
+//       console.log(arr[i].name,"Grade C");
+      
+//     }
+//     else{
+//       console.log(arr[i].name,"Fail");
+      
+//     }
+//   }
+//   return grade
+  
+// }
+
+// student([
+//     { name: "Ali", marks: 85 },
+//     { name: "Ahmed", marks: 42 },
+//     { name: "Usman", marks: 67 },
+//     { name: "Hassan", marks: 28 },
+//     { name: "Danish", marks: 91 }
+// ])
+
+// function users (arr){
+
+//   for(let i = 0; i < arr.length; i++){
+//     if(arr[i].salary >= 50000 && arr[i].experience >= 3 && arr[i].performance >= 80){
+//       console.log(arr[i].name, "Bonus Eligible");
+//     }
+//     else if (arr[i].salary >= 50000 && arr[i].experience >= 3 && arr[i].performance <= 80){
+//       console.log(arr[i].name, "Performance Improvement Needed");
+//     }
+//     else {
+//       console.log(arr[i].name, "Not Eligible");
+//     }
+    
+//   }
+// }
+
+// users( [
+//     { name: "Ali", salary: 60000, experience: 4, performance: 85 },
+//     { name: "Ahmed", salary: 45000, experience: 5, performance: 90 },
+//     { name: "Usman", salary: 70000, experience: 2, performance: 75 },
+//     { name: "Hassan", salary: 50000, experience: 3, performance: 60 },
+//     { name: "Danish", salary: 80000, experience: 6, performance: 95 }
+// ])
+
+// function user (arr){
+//   let eligibleUsers = []
+//   for(let i = 0; i < arr.length; i++){
+//     if(arr[i].salary >= 50000 && arr[i].experience >= 3){
+//       eligibleUsers.push(arr[i].name)
+//     }
+//   }
+//   return eligibleUsers
+// }
+// console.log(user([
+//     { name: "Ali", salary: 60000, experience: 4 },
+//     { name: "Ahmed", salary: 45000, experience: 5 },
+//     { name: "Usman", salary: 70000, experience: 2 },
+//     { name: "Hassan", salary: 50000, experience: 3 },
+//     { name: "Danish", salary: 80000, experience: 6 }
+// ]))
+
+// function machine (arr){
+//   let eligiblemachine = []
+//   for(let i = 0; i < arr.length; i++){
+//     if(arr[i].price * arr[i].quantity >= 20000){
+//       eligiblemachine.push(arr[i].name)
+//     }
+//   }
+//   return eligiblemachine
+// }
+// console.log(machine([
+//     { name: "Laptop", price: 80000, quantity: 1 },
+//     { name: "Mouse", price: 1500, quantity: 2 },
+//     { name: "Keyboard", price: 3000, quantity: 1 },
+//     { name: "Monitor", price: 25000, quantity: 2 },
+//     { name: "Headphones", price: 4000, quantity: 1 }
+// ]))
+
+function billing (arr){
+  let total = 0
+  let discount = 0
+  let finalbill;
+  for(let i = 0; i < arr.length; i++){
+    total = total + (arr[i].price * arr[i].quantity);
+  }
+    if(total >= 100000){
+      discount = total * 10 / 100
+    }
+    else if (total >= 50000){
+      discount = total * 5 / 100
+    }
+    else{
+      discount = 0;
+    }
+    finalbill = total - discount
+  return finalbill
+}
+console.log(billing([
+    { name: "Laptop", price: 80000, quantity: 1 },
+    { name: "Mouse", price: 1500, quantity: 2 },
+    { name: "Keyboard", price: 3000, quantity: 1 },
+    { name: "Monitor", price: 25000, quantity: 2 }
+]));
+
+
+
+
+
+
+
+
 
 
