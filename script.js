@@ -1631,3 +1631,266 @@
 
 // myCar.drive()
 // myCar.start()
+
+// class Car {
+//     constructor(brand, color){
+//         this.brand = brand;
+//         this.color = color;
+//         this.speed = 0;
+//     }
+//     accelerate(amount){
+//         this.speed += amount
+//         console.log(`${this.brand} ki speed ab ${this.speed} km/h hai...`);
+//     }
+// }
+
+// const car1 = new  Car("Supra", "white")
+// const car2 = new  Car("Bugatti", "Black")
+
+// car1.accelerate(120)
+
+// const obj = {
+//     name: "Areef",
+//     Age: 18,
+//     address: {
+//         city: "Karachi" 
+//     },
+//     marks : 95.3,
+//     printMarks : function (){
+//         console.log("Marks = " + this.marks);
+//     },
+// }
+
+// console.log(obj);
+
+// const obj = {
+//     calcTax(){
+//         console.log("Tax ratio is 10%");
+//     },
+// }
+
+// const Areef = {
+//     salary : 50000,
+
+// }
+// Areef.__proto__ = obj
+
+// class myNewCar {
+//     constructor (brand, carName){
+//         this.brand = brand
+//         this.carName = carName
+//     }
+//     Toyota(){
+//         console.log(`meri car is ${this.brand} brand ki he or model name ${this.carName} hai...`);
+//     }
+// }
+
+// const car = new myNewCar("Toyota", "corolla")
+// const car2 = new myNewCar("Toyota", "Supra")
+// console.log(car);
+
+// class car {
+//     constructor(brand, mileage){
+//         this.brand = brand
+//         this.mileage = mileage
+//         console.log("creating the new object");
+        
+//     }
+//     start(){
+//         console.log("start");
+//     }
+//     stop(){
+//         console.log("stop");
+//     }
+    
+// }
+
+// let toyota = new car("supra", 10)
+// console.log(toyota);
+
+// const obj = {
+//     name: "Areef",
+//     Age : 18,
+//     City: "Karachi"
+// }
+// console.log(obj);
+
+// class myData{
+//     constructor(Name, Age, City){
+//         this.Name = Name
+//         this.Age = Age
+//         this.City = City
+//     }
+//     name(){
+//         console.log("Areef");
+//     }
+//     age(){
+//         console.log(18);
+//     }
+//     city(){
+//         console.log("Karachi");
+//     }
+// }
+
+// class newData extends myData{
+//     province(){
+//         console.log("Sindh");
+//     }
+// }
+
+// const data = new newData("Areef", 18, "Karachi")
+// console.log(data);
+// let data = "secret user"
+// class User {
+//     constructor(name, email){
+//         this.Name = name
+//         this.Email = email
+//     }
+//     viewDetails(){
+//             console.log("Data = ", data);
+//         }
+//     }
+//     class Admin extends User{
+//         constructor(name, email){
+//             super(name, email)
+//         }
+//         editDetails(){
+//             console.log("DATA =", data);
+            
+//         }
+//     }
+
+//     const userdata = new User("Areef", "areef@gmail.com")
+//     const userdata2 = new User("Rayyan", "rayyan@gmail.com")
+//     const userdata3 = new User("Affan", "affan@gmail.com")
+//     const admin = new Admin("Danish", "danish@gmail.com")
+//     console.log(userdata);
+//     console.log(userdata2);
+//     console.log(userdata3);
+//     console.log(admin);
+// try{
+
+//     let a = 5
+//     let b = 10
+//     console.log("A = ", a);
+//     console.log("B = ", b);
+//     console.log("A+B = ", a + b);
+//     console.log("A+B = ", a + b);
+//     console.log("A+B = ", a + c);
+//     console.log("A+B = ", a + b);
+//     console.log("A+B = ", a + b);
+//     console.log("A+B = ", a + b);
+// }catch(err){
+//     console.log("Error: " + err);
+    
+// }
+
+// class Notification {
+//   send(message) {
+//     console.log("Sending notification:", message);
+//   }
+// }
+
+// class EmailNotification extends Notification {
+//   send(message) {
+//     console.log(`Email bheji gayi: ${message}`);
+//   }
+// }
+
+// class SmsNotification extends Notification {
+//   send(message) {
+//     console.log(`SMS bheja gaya: ${message}`);
+//   }
+// }
+
+// const alerts = [new EmailNotification(), new SmsNotification()];
+// for (const alert of alerts) {
+//   alert.send("Aapka order confirm ho gaya hai."); 
+// }
+
+// class User {
+//     #privatefield
+//     constructor(username, password = 0){
+//         this.username = username
+//         this.#privatefield = password
+//     }
+// }
+
+// function setUsername(username){
+//   this.username = username
+// }
+
+// function createusername (username, email, password){
+//   setUsername.call(this, username)
+//   this.email = email
+//   this.password = password
+// }
+// const values = new createusername("Areef", "areefdj@gmail.com", 123)
+// console.log(values);
+
+// class React {
+//   constructor(){
+//     this.library = "React"
+//     this.server = "https://www.youtube.com"
+//     document.querySelector('.btn').addEventListener('click', this.handleclick.bind(this))
+//   }
+//   handleclick(){
+//     console.log("Button clicked");
+//     console.log(this);
+    
+    
+//   }
+// }
+
+// const user = new React()
+
+// const obj = Object.getOwnPropertyDescriptor(Math, "PI")
+// console.log(obj);
+
+// const chai = {
+//   name: "Areef",
+//   email: "areef@gmail.com",
+//   function: function (){
+//     console.log("Chai ban gai");
+//   }
+// }
+
+// Object.defineProperty(chai, 'name', {
+//   writable: false,
+//   enumerable: false
+// })
+// console.log(Object.getOwnPropertyDescriptor(chai, 'name'));
+
+
+// for (const [key, value] of Object.entries(chai)) {
+//   if(typeof value !== 'function'){
+//     console.log(`${key} : ${value}`);
+//   }
+// }
+
+class user {
+  constructor(email, password){
+    this.email = email
+    this.password = password
+  }
+  get email(){
+    return this.Email.toUpperCase()
+  }
+  set email(value){
+    this.Email = value
+  }
+  get password(){
+    return this.Password.toUpperCase()
+  }
+  set password (value){
+    this.Password = value
+  }
+
+}
+
+const userdata = new user("areef@gmail.com", "areef")
+
+console.log(userdata.email);
+      
+
+
