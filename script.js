@@ -1988,34 +1988,228 @@
 //     { name: "Headphones", price: 4000, quantity: 1 }
 // ]))
 
-function billing (arr){
-  let total = 0
-  let discount = 0
-  let finalbill;
-  for(let i = 0; i < arr.length; i++){
-    total = total + (arr[i].price * arr[i].quantity);
+// function billing (arr){
+//   let total = 0
+//   let discount = 0
+//   let finalbill;
+//   for(let i = 0; i < arr.length; i++){
+//     total = total + (arr[i].price * arr[i].quantity);
+//   }
+//     if(total >= 100000){
+//       discount = total * 10 / 100
+//     }
+//     else if (total >= 50000){
+//       discount = total * 5 / 100
+//     }
+//     else{
+//       discount = 0;
+//     }
+//     finalbill = total - discount
+//   return finalbill
+// }
+// console.log(billing([
+//     { name: "Laptop", price: 80000, quantity: 1 },
+//     { name: "Mouse", price: 1500, quantity: 2 },
+//     { name: "Keyboard", price: 3000, quantity: 1 },
+//     { name: "Monitor", price: 25000, quantity: 2 }
+// ]));
+
+
+// function users (arr){
+//   let eligibleuser = []
+//   for(let i = 0; i < arr.length; i++){
+//     if(arr[i].salary >= 50000 && arr[i].performance >= 80){
+//       let bonus = arr[i].salary * 10 / 100
+//       arr[i].bonus = bonus
+//       console.log(arr[i].name, bonus);
+//       eligibleuser.push(arr[i])
+//     }
+    
+//   }
+//   return eligibleuser
+  
+// }
+
+// console.log(users([
+//     { name: "Ali", salary: 60000, performance: 90, experience: 4 },
+//     { name: "Ahmed", salary: 40000, performance: 75, experience: 2 },
+//     { name: "Usman", salary: 80000, performance: 95, experience: 6 },
+//     { name: "Hassan", salary: 55000, performance: 60, experience: 3 },
+//     { name: "Danish", salary: 70000, performance: 85, experience: 5 }
+// ]))
+
+// function checkNum (num){
+//   if(num > 0){
+//     console.log("Positive");
+//   }
+//   else if(num === 0){
+//     console.log("Zero");
+//   }
+//   else{
+//     console.log("Negative");
+//   }
+// }
+
+// checkNum(-2)
+
+// let marks = [45, 82, 30, 91, 60, 75]
+// const numbers = (arr) => {
+//  const result = arr.filter((item) => {
+//   return item > 50
+//  })
+//  return result
+// }
+// console.log(numbers(marks));
+
+// const price = [100, 200 ,300]
+
+// const formatPrice = (arr) => {
+//   const product = arr.map((item) => {
+//     return `Rs. ${item}`
+//   })
+//   return product
+// }
+
+// console.log(formatPrice(price));
+
+//  const score = [40, 75, 90, 50, 65]
+//  function countPassed (arr){
+//   let count = 0;
+//   for(let i = 0; i < arr.length; i++){
+//     if(arr[i] >= 50){
+//       count++;
+//     }
+//   }
+//   return count
+//  }
+// console.log(countPassed(score));
+
+// function outer (name){
+//   const greeting = "Hello"
+//   function inner (){
+//     return `${greeting}: ${name}`
+//   }
+//   return inner()
+// }
+// console.log(outer("Areef"));
+
+// const user = {
+//   name: "Areef",
+//   role: "Student",
+//   introduce(){
+//     this.name
+//     this.role
+//     return `${this.name} is a ${this.role}`
+//   }
+// }
+
+// const greet = user.introduce.bind(user)
+// console.log(greet());
+
+// function sumupto(n){
+//   let sum = 0 ;
+//   let i = 1;
+//   while(i <= n){
+//     sum += i
+//     i++
+//   }
+//   return sum
+// }
+// console.log(sumupto(4));
+
+// function canEnter (age, hasTicket){
+//   if(age >= 18 && hasTicket === true){
+//     return "Allowed"
+//   }
+//   else{
+//     return "Not Allowed"
+//   }
+// }
+// console.log(canEnter(20, true));
+// console.log(canEnter(17, true));
+
+// function loginMeassage (username = "Guest", isbanned = false){
+//   if(isbanned === true || username === ""){
+//     return "Access Denied"
+//   }
+//   else{
+//     return `welcome, ${username}`
+//   }
+// }
+
+// console.log(loginMeassage("Areef"));
+// console.log(loginMeassage("Areef", true));
+
+const students = [
+  { name: "Areef", score: 85 },
+  { name: "Bilal", score: 42 },
+  { name: "Sana", score: 91 },
+  { name: "Zain", score: 49 }
+];
+
+
+// function getPassedLabels(list){
+//   let pass = []
+//   for(let i = 0; i < list.length; i++){
+//       if(list[i].score >= 50){
+//         const label = `${list[i].name} (${list[i].score})`
+//         pass.push(label)
+//       }
+//     }
+//     return pass
+//   }
+
+//   console.log(getPassedLabels(students));
+
+// const cart = {
+//   items: [
+//     { name: "Book", price: 500, qty: 2 },
+//     { name: "Pen", price: 50, qty: 4 },
+//     { name: "Bag", price: 1500, qty: 1 }
+//   ],
+//   getTotal() {
+//     let total = 0
+//     this.items.forEach((item) => {
+//       total += item.price * item.qty
+//     })
+//     return total  
+//   }
+// }
+
+// console.log(cart.getTotal());
+
+class bankAccount {
+  constructor(owner, balance){
+    this.owner = owner
+    this.balance = balance
   }
-    if(total >= 100000){
-      discount = total * 10 / 100
+  withdraw(amount){
+    if(amount > this.balance){
+      return "Insufficient balance"
     }
-    else if (total >= 50000){
-      discount = total * 5 / 100
-    }
-    else{
-      discount = 0;
-    }
-    finalbill = total - discount
-  return finalbill
+    this.balance -= amount
+
+    return `Withdraw ${amount}. Remaining: ${this.balance}`
+  }
 }
-console.log(billing([
-    { name: "Laptop", price: 80000, quantity: 1 },
-    { name: "Mouse", price: 1500, quantity: 2 },
-    { name: "Keyboard", price: 3000, quantity: 1 },
-    { name: "Monitor", price: 25000, quantity: 2 }
-]));
 
+class savingsAccount extends bankAccount {
+  constructor(owner, balance, interestRate){
+    super(owner, balance)
+    this.interestRate = interestRate
+  }
+  addInterest(){
+    const interest = (this.balance * this.interestRate) / 100
+    this.balance += interest
+    return this.balance
+  }
+}
 
-
+const save = new savingsAccount("Areef", 1000, 10)
+const acc = new bankAccount("Areef", 1000)
+console.log(acc.withdraw(300));
+console.log(acc.withdraw(500));
+console.log(save.addInterest());
 
 
 
